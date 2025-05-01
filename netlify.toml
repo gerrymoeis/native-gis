@@ -1,0 +1,19 @@
+[build]
+  publish = "public/"
+  command = "# no build command"
+
+# Pengaturan untuk SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Header keamanan
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' unpkg.com 'unsafe-inline'; style-src 'self' unpkg.com 'unsafe-inline'; img-src 'self' data: *.tile.openstreetmap.org; connect-src 'self' *.tile.openstreetmap.org;"

@@ -1,0 +1,8 @@
+{
+  "name": "native-gis",
+  "description": "SDGs Dashboard untuk Bonus Demografi Indonesia",
+  "buildCommand": "",
+  "framework": "#static",
+  "nodeVersion": "16",
+  "plugins": []
+}

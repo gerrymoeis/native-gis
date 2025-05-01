@@ -1,0 +1,16 @@
+{
+  "name": "native-gis",
+  "version": "1.0.0",
+  "description": "SDGs Dashboard untuk Bonus Demografi Indonesia",
+  "main": "index.js",
+  "scripts": {
+    "start": "netlify dev",
+    "build": "# no build command needed"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.21.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^15.0.0"
+  }
+}
