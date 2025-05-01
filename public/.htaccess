@@ -1,0 +1,7 @@
+DirectoryIndex index.html
+Options -Indexes
+RewriteEngine On
+RewriteBase /native-gis/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.html [L]

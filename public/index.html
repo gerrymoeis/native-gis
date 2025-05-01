@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGs Dashboard untuk Bonus Demografi Indonesia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Dashboard visualisasi data SDGs dan demografi Indonesia untuk mendukung perencanaan strategis bonus demografi 2045">
+    <meta name="keywords" content="SDGs, bonus demografi, Indonesia, visualisasi data, GIS, peta interaktif, Sustainable Development Goals">
+    <meta name="author" content="SDGs Dashboard Team">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sdgs-dashboard.id/">
+    <meta property="og:title" content="SDGs Dashboard untuk Bonus Demografi Indonesia">
+    <meta property="og:description" content="Dashboard visualisasi data SDGs dan demografi Indonesia untuk mendukung perencanaan strategis bonus demografi 2045">
+    <meta property="og:image" content="images/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://sdgs-dashboard.id/">
+    <meta property="twitter:title" content="SDGs Dashboard untuk Bonus Demografi Indonesia">
+    <meta property="twitter:description" content="Dashboard visualisasi data SDGs dan demografi Indonesia untuk mendukung perencanaan strategis bonus demografi 2045">
+    <meta property="twitter:image" content="images/twitter-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>SDGs Dashboard</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active" data-page="home">Beranda</a></li>
+                    <li><a href="#" data-page="map">Peta GIS</a></li>
+                    <li><a href="#" data-page="analysis">Analisis</a></li>
+                    <li><a href="#" data-page="reports">Laporan</a></li>
+                    <li><a href="#" data-page="about">Tentang</a></li>
+                    <li><a href="#" id="loginBtn" class="btn">Masuk</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2>Visualisasi Data SDGs untuk Bonus Demografi Indonesia</h2>
+                        <p>Platform visualisasi data interaktif untuk memantau indikator SDGs dan demografi Indonesia menuju bonus demografi 2045</p>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn btn-primary" id="exploreMapBtn">Jelajahi Peta</a>
+                            <a href="#" class="btn btn-secondary" id="learnMoreBtn">Pelajari Lebih Lanjut</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-bg">
+                    <div class="gradient-sphere"></div>
+                    <div class="particles"></div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <div class="container">
+                    <h3>Fitur Utama</h3>
+                    <div class="feature-grid">
+                        <div class="feature-card">
+                            <div class="icon">🗺️</div>
+                            <h4>Visualisasi GIS</h4>
+                            <p>Peta interaktif yang menampilkan kepadatan penduduk dan indikator SDGs per provinsi</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon">📊</div>
+                            <h4>Analisis Tren</h4>
+                            <p>Grafik dan tabel yang menggambarkan perkembangan indikator SDGs dari waktu ke waktu</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon">💡</div>
+                            <h4>Rekomendasi Kebijakan</h4>
+                            <p>Saran kebijakan otomatis berdasarkan analisis data, didukung oleh AI</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon">📄</div>
+                            <h4>Laporan Otomatis</h4>
+                            <p>Pembuatan laporan dalam format PDF atau Excel untuk kebutuhan pelaporan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats-overview">
+                <div class="container">
+                    <h3>Statistik Demografi Indonesia</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4>Populasi</h4>
+                            <div class="stat-value">273.8 Juta</div>
+                            <div class="stat-label">Total Penduduk (2023)</div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Usia Produktif</h4>
+                            <div class="stat-value">68.7%</div>
+                            <div class="stat-label">Penduduk 15-64 Tahun</div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Proyeksi 2045</h4>
+                            <div class="stat-value">318.9 Juta</div>
+                            <div class="stat-label">Total Penduduk</div>
+                        </div>
+                        <div class="stat-card">
+                            <h4>Puncak Bonus Demografi</h4>
+                            <div class="stat-value">2045</div>
+                            <div class="stat-label">Tahun Proyeksi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Page -->
+        <section id="map" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Peta GIS Indikator SDGs</h2>
+                    <p>Visualisasi geografis indikator SDGs dan data demografi di seluruh provinsi Indonesia</p>
+                </div>
+                
+                <div class="map-controls">
+                    <div class="control-group">
+                        <label for="yearSelect">Tahun:</label>
+                        <select id="yearSelect">
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="indicatorSelect">Indikator:</label>
+                        <select id="indicatorSelect">
+                            <option value="populasi">Populasi</option>
+                            <option value="angka_harapan_hidup">Angka Harapan Hidup</option>
+                            <option value="rata_lama_sekolah">Rata-rata Lama Sekolah</option>
+                            <option value="tingkat_pengangguran">Tingkat Pengangguran</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div id="mapContainer"></div>
+                
+                <div class="map-legend">
+                    <h4>Legenda</h4>
+                    <div class="legend-items" id="mapLegend">
+                        <!-- Legend items will be generated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Analysis Page -->
+        <section id="analysis" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Analisis Tren SDGs</h2>
+                    <p>Analisis perkembangan indikator SDGs dan data demografi dari waktu ke waktu</p>
+                </div>
+                
+                <div class="analysis-controls">
+                    <div class="control-group">
+                        <label for="analysisIndicator">Indikator:</label>
+                        <select id="analysisIndicator">
+                            <option value="angka_harapan_hidup">Angka Harapan Hidup</option>
+                            <option value="rata_lama_sekolah">Rata-rata Lama Sekolah</option>
+                            <option value="tingkat_pengangguran">Tingkat Pengangguran</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="analysisProvinsi">Provinsi:</label>
+                        <select id="analysisProvinsi">
+                            <option value="all">Semua Provinsi</option>
+                            <option value="DKI Jakarta">DKI Jakarta</option>
+                            <option value="Jawa Barat">Jawa Barat</option>
+                            <option value="Jawa Tengah">Jawa Tengah</option>
+                            <option value="Jawa Timur">Jawa Timur</option>
+                            <option value="Bali">Bali</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+                
+                <div class="data-table">
+                    <h3>Data Tabel</h3>
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Provinsi</th>
+                                <th>Indikator</th>
+                                <th>Nilai</th>
+                                <th>Tahun</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Table data will be generated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reports Page -->
+        <section id="reports" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Laporan SDGs</h2>
+                    <p>Buat dan unduh laporan tentang indikator SDGs dan data demografi</p>
+                </div>
+                
+                <div class="report-generator">
+                    <h3>Buat Laporan Baru</h3>
+                    <form id="reportForm">
+                        <div class="form-group">
+                            <label for="reportTitle">Judul Laporan:</label>
+                            <input type="text" id="reportTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportDescription">Deskripsi:</label>
+                            <textarea id="reportDescription" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportIndicator">Indikator:</label>
+                            <select id="reportIndicator" required>
+                                <option value="angka_harapan_hidup">Angka Harapan Hidup</option>
+                                <option value="rata_lama_sekolah">Rata-rata Lama Sekolah</option>
+                                <option value="tingkat_pengangguran">Tingkat Pengangguran</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportProvinsi">Provinsi:</label>
+                            <select id="reportProvinsi" required>
+                                <option value="all">Semua Provinsi</option>
+                                <option value="DKI Jakarta">DKI Jakarta</option>
+                                <option value="Jawa Barat">Jawa Barat</option>
+                                <option value="Jawa Tengah">Jawa Tengah</option>
+                                <option value="Jawa Timur">Jawa Timur</option>
+                                <option value="Bali">Bali</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="reportFormat">Format:</label>
+                            <select id="reportFormat" required>
+                                <option value="pdf">PDF</option>
+                                <option value="excel">Excel</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Buat Laporan</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="saved-reports">
+                    <h3>Laporan Tersimpan</h3>
+                    <div class="reports-list" id="savedReportsList">
+                        <!-- Saved reports will be generated dynamically -->
+                        <p class="no-reports">Tidak ada laporan tersimpan. Silakan login untuk melihat laporan Anda.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h2>Tentang Proyek</h2>
+                    <p>Informasi tentang SDGs Dashboard untuk Bonus Demografi Indonesia</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-section">
+                        <h3>Latar Belakang</h3>
+                        <p>Indonesia diproyeksikan mencapai puncak bonus demografi pada tahun 2045, saat proporsi penduduk usia produktif (15-64 tahun) akan mendominasi. Bonus demografi ini menawarkan peluang besar untuk pembangunan ekonomi dan sosial, namun juga menuntut perencanaan strategis agar potensinya dapat dimanfaatkan secara optimal.</p>
+                        <p>Untuk itu, pemantauan indikator Sustainable Development Goals (SDGs) seperti kesehatan, pendidikan, dan ketenagakerjaan menjadi krusial. Proyek ini bertujuan mengembangkan aplikasi web yang memvisualisasikan data demografi dan kemajuan SDGs, memberikan rekomendasi kebijakan berbasis data, serta menghasilkan laporan otomatis untuk mendukung pengambilan keputusan oleh pemangku kepentingan.</p>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3>Tujuan</h3>
+                        <ul>
+                            <li>Menyediakan alat visualisasi data yang intuitif untuk memantau indikator demografi dan SDGs.</li>
+                            <li>Memberikan rekomendasi kebijakan berbasis data yang relevan untuk pemerintah, akademisi, dan masyarakat.</li>
+                            <li>Memfasilitasi pembuatan laporan otomatis yang dapat diakses oleh pemangku kepentingan.</li>
+                            <li>Memastikan keamanan dan kemudahan penggunaan aplikasi melalui desain yang responsif dan manajemen pengguna yang terstruktur.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3>Sumber Data</h3>
+                        <p>Data yang digunakan dalam aplikasi ini bersumber dari:</p>
+                        <ul>
+                            <li>Badan Pusat Statistik (BPS)</li>
+                            <li>Portal Data Indonesia (data.go.id)</li>
+                            <li>Kementerian Perencanaan Pembangunan Nasional (BAPPENAS)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="about-section">
+                        <h3>Tim Pengembang</h3>
+                        <p>Proyek ini dikembangkan oleh tim SDGs Dashboard untuk Lomba Olivia 2025 dengan tema "Sustainable Digital Solutions: Enhancing Innovation through Web Technology."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>SDGs Dashboard</h3>
+                    <p>Visualisasi Data untuk Bonus Demografi Indonesia</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Tautan</h4>
+                    <ul>
+                        <li><a href="#" data-page="home">Beranda</a></li>
+                        <li><a href="#" data-page="map">Peta GIS</a></li>
+                        <li><a href="#" data-page="analysis">Analisis</a></li>
+                        <li><a href="#" data-page="reports">Laporan</a></li>
+                        <li><a href="#" data-page="about">Tentang</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Kontak</h4>
+                    <p>Email: info@sdgs-dashboard.id</p>
+                    <p>Telepon: +62 21 12345678</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SDGs Dashboard. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3>Masuk</h3>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Masuk</button>
+                    </div>
+                </form>
+                <p class="modal-switch">Belum punya akun? <a href="#" id="registerLink">Daftar</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h3>Daftar</h3>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="regUsername">Username:</label>
+                        <input type="text" id="regUsername" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regEmail">Email:</label>
+                        <input type="email" id="regEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassword">Password:</label>
+                        <input type="password" id="regPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regConfirmPassword">Konfirmasi Password:</label>
+                        <input type="password" id="regConfirmPassword" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Daftar</button>
+                    </div>
+                </form>
+                <p class="modal-switch">Sudah punya akun? <a href="#" id="loginLink">Masuk</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script src="js/debug.js"></script>
+    <script src="js/map-simple.js"></script>
+    <script src="js/analysis.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/recommendations.js"></script>
+</body>
+</html>
