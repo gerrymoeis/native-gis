@@ -8,7 +8,7 @@
     "build": "# no build command needed"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.21.0"
+    "@supabase/supabase-js": "^2.49.4"
   },
   "devDependencies": {
     "netlify-cli": "^15.0.0"

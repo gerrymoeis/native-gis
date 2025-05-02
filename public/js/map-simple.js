@@ -1,6 +1,6 @@
 /**
  * Simple Map Module - Minimal version to ensure OpenStreetMap works
- * Modified for Netlify deployment
+ * Modified for Netlify deployment with static JSON data
  */
 
 // Wait for the DOM to be fully loaded
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log('Map initialized successfully');
             
-            // Load GeoJSON data from Netlify Function (instead of PHP API)
+            // Load GeoJSON data from static JSON file (instead of API)
             loadGeoJsonData(map);
             
             // Force map to render correctly after a delay
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Function to load GeoJSON data from Netlify Function
+    // Function to load GeoJSON data from static JSON file
     function loadGeoJsonData(map) {
         // Get selected values from controls
         const yearSelect = document.getElementById('yearSelect');
@@ -93,12 +93,22 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingOverlay.style.zIndex = '1000';
         mapContainer.appendChild(loadingOverlay);
         
-        // URL for Netlify Function (instead of PHP API)
+        // URL for static JSON file (instead of API)
+        // First try Netlify Function, fallback to static JSON if that fails
         const apiUrl = `/.netlify/functions/get-geojson?tahun=${year}&indikator=${indicator}`;
-        console.log('Fetching GeoJSON data from:', apiUrl);
+        const staticUrl = `/data/geojson-${year}.json`;
         
-        // Fetch GeoJSON data
+        console.log('Trying to fetch GeoJSON data from Netlify Function:', apiUrl);
+        
+        // Fetch GeoJSON data with fallback
         fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    console.log('Netlify Function not available, falling back to static JSON');
+                    return fetch(staticUrl);
+                }
+                return response;
+            })
             .then(response => {
                 if (!response.ok) {
                     throw new Error(`Network response was not ok: ${response.status} ${response.statusText}`);

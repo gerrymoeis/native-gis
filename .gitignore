@@ -45,3 +45,6 @@ config.local.php
 # Other files and directories to ignore
 /coverage
 .phpunit.result.cache
+
+# Local Netlify folder
+.netlify

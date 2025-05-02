@@ -1,0 +1,100 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [106.8456, -6.2088]
+      },
+      "properties": {
+        "id": 1,
+        "provinsi": "DKI Jakarta",
+        "kabupaten": null,
+        "populasi": 10562088,
+        "populasi_produktif": 7393461,
+        "persentase_produktif": 70.0,
+        "tahun": 2023,
+        "indikator": "populasi",
+        "nilai": 85.2,
+        "kategori": "Tinggi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [110.4203, -7.7956]
+      },
+      "properties": {
+        "id": 2,
+        "provinsi": "Jawa Tengah",
+        "kabupaten": null,
+        "populasi": 34552500,
+        "populasi_produktif": 23828225,
+        "persentase_produktif": 69.0,
+        "tahun": 2023,
+        "indikator": "populasi",
+        "nilai": 76.8,
+        "kategori": "Sedang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.2126, -8.6524]
+      },
+      "properties": {
+        "id": 3,
+        "provinsi": "Bali",
+        "kabupaten": null,
+        "populasi": 4317404,
+        "populasi_produktif": 3023183,
+        "persentase_produktif": 70.0,
+        "tahun": 2023,
+        "indikator": "populasi",
+        "nilai": 80.5,
+        "kategori": "Tinggi"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [112.7508, -7.2575]
+      },
+      "properties": {
+        "id": 4,
+        "provinsi": "Jawa Timur",
+        "kabupaten": null,
+        "populasi": 39293000,
+        "populasi_produktif": 27112170,
+        "persentase_produktif": 69.0,
+        "tahun": 2023,
+        "indikator": "populasi",
+        "nilai": 78.3,
+        "kategori": "Sedang"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [107.6689, -6.9175]
+      },
+      "properties": {
+        "id": 5,
+        "provinsi": "Jawa Barat",
+        "kabupaten": null,
+        "populasi": 48274162,
+        "populasi_produktif": 33309372,
+        "persentase_produktif": 69.0,
+        "tahun": 2023,
+        "indikator": "populasi",
+        "nilai": 77.5,
+        "kategori": "Sedang"
+      }
+    }
+  ]
+}
